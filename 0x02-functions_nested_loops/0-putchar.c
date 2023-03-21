@@ -1,12 +1,9 @@
 #include <stdio.h>
+#include "main.h"
 /**                                                                                                 
  * main - debugging example                                                                         
  * Return: 0                                                                                        
 */
-
-#include <stdio.h>
-
-int _putchar(char c);
 
 int main(void) {
 _putchar('_');
@@ -21,7 +18,3 @@ _putchar('\n');
 
 return (0);
 }
-
-int _putchar(char c) {
-return putchar(c);
-}    
