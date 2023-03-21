@@ -4,6 +4,14 @@
  * main - debugging example                                                                         
  * Return: 0                                                                                        
 */
+
+
+int _putchar(char c) {
+return putchar(c);
+}
+
+int _putchar(char c);
+
 _putchar('_');
 _putchar('p');
 _putchar('u');
