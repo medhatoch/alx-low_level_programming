@@ -17,6 +17,6 @@ _putchar(letter);
 letter++;
 }
 _putchar('\n');
-letter = 'a'
+letter = 'a';
 }
 }
