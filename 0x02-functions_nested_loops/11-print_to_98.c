@@ -14,9 +14,9 @@ if (n <= 98)
 {
 for (i = n; i < 98; i++)
 {
-digit = i / 10 + '0';
+digit = i / 10;
 _putchar(digit);
-digit = i % 10 + '0';
+digit = i % 10;
 _putchar(digit);
 _putchar(',');
 _putchar(' ');
@@ -26,9 +26,9 @@ else
 {
 for (i = n; i > 98; i--)
 {
-digit = i / 10 + '0';
+digit = i / 10;
 _putchar(digit);
-digit = i % 10 + '0';
+digit = i % 10;
 _putchar(digit);
 _putchar(',');
 _putchar(' ');
