@@ -8,37 +8,20 @@
 void print_to_98(int n)
 {
 int i;
-char digit;
 
 if (n <= 98)
 {
 for (i = n; i < 98; i++)
 {
-digit = i / 10;
-_putchar(digit);
-digit = i % 10;
-_putchar(digit);
-_putchar(',');
-_putchar(' ');
+printf("%d, ", i);
 }
 }
 else
 {
 for (i = n; i > 98; i--)
 {
-digit = i / 10;
-_putchar(digit);
-digit = i % 10;
-_putchar(digit);
-_putchar(',');
-_putchar(' ');
+printf("%d, ", i);
 }
 }
-
-_putchar('9');
-_putchar('8');
-_putchar('\n');
+printf("98\n");
 }
-
-
-
