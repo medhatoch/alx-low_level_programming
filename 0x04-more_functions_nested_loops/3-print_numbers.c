@@ -10,7 +10,7 @@ int i;
 
 for (i = 0; i < 10; i++)
 {
-_putchar(i + '0');
+printf(i);
 }
-_putchar('\n');
+printf("\n");
 }
