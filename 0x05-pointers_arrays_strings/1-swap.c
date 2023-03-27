@@ -5,8 +5,6 @@
  *
  * @b: pointer to an integer.
  *
- * @c: permutator.
- *
  * Return: void.
  */
 void swap_int(int *a, int *b)
