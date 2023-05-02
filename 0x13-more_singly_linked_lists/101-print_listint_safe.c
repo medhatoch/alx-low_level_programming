@@ -1,62 +1,42 @@
 #include "lists.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
- * print_listint - Prints all the elements of a listint_t list.
- * @h: A pointer to the head of the listint_t list.
+ * print_listint_safe - prints a listint_t linked list
+ * @head: pointer to head of list
  *
- * Return: The number of nodes in the list.
- */
-size_t print_listint(const listint_t *h)
-{
-size_t n = 0;
-
-while (h != NULL)
-{
-printf("%d\n", h->n);
-h = h->next;
-n++;
-}
-
-return (n);
-}
-
-/**
- * print_listint_safe - Prints a listint_t linked list safely.
- * @head: A pointer to the head of the listint_t list.
- *
- * Return: The number of nodes in the list.
+ * Return: number of nodes in the list
  */
 size_t print_listint_safe(const listint_t *head)
 {
-const listint_t *slowPtr = head, *fastPtr = head;
-int loopExists = 0;
-size_t n = 0;
+const listint_t *current;
+size_t count;
 
-while (slowPtr != NULL && fastPtr != NULL && fastPtr->next != NULL)
-{
-slowPtr = slowPtr->next;
-fastPtr = fastPtr->next->next;
+current = head;
+count = 0;
 
-if (slowPtr == fastPtr)
+while (current != NULL)
 {
-loopExists = 1;
+printf("[%p] %d\n", (void *) current, current->n);
+count++;
+if (current < current->next)
+{
+current = current->next;
+}
+else
+{
+printf("-> [%p] %d\n", (void *) current->next, current->next->n);
 break;
 }
 }
 
-if (loopExists)
+if (current == NULL)
 {
-do {
-printf("%d\n", slowPtr->n);
-slowPtr = slowPtr->next;
-n++;
-} while (slowPtr != fastPtr);
-
-printf("...\n");
-return (n);
+return (count);
 }
 else
 {
-return (print_listint(head));
+exit(98);
 }
 }
