@@ -16,7 +16,7 @@ unsigned int count = 0;
 while (current != NULL)
 {
 if (count == index)
-    return (current);
+return (current);
 count++;
 current = current->next;
 }
