@@ -19,8 +19,8 @@ for (i = 0; b[i] != '\0'; i++)
 if (b[i] != '0' && b[i] != '1')
 return (0);
 
-num <<= 1; // Left shift by 1 position
-num += (b[i] - '0'); // Convert char to int and add it to num
+num <<= 1; /* Left shift by 1 position */
+num += (b[i] - '0'); /* Convert char to int and add to num */
 }
 
 return (num);
