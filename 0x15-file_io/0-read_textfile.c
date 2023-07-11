@@ -18,12 +18,12 @@ ssize_t file_descriptor;
 ssize_t bytes_written;
 ssize_t bytes_read;
 
-fd = open(filename, O_RDONLY);
+file_descriptor = open(filename, O_RDONLY);
 if (file_descriptor == -1)
 return (0);
-buf = malloc(sizeof(char) * letters);
-t = read(file_descriptor, buffer, letters);
-w = write(STDOUT_FILENO, buffer, bytes_read);
+buffer = malloc(sizeof(char) * letters);
+bytes_read = read(file_descriptor, buffer, letters);
+bytes_written = write(STDOUT_FILENO, buffer, bytes_read);
 
 free(buffer);
 close(file_descriptor);
