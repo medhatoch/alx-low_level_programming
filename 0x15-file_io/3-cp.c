@@ -9,6 +9,8 @@
  * display_error - Displays an error message and exits with the specified code.
  * @message: The error message to display.
  * @code: The exit code.
+ *
+ * Return: None.
  */
 void display_error(const char *message, int code);
 
@@ -16,6 +18,7 @@ void display_error(const char *message, int code);
  * copy_file - Copies the content of a file to another file.
  * @file_from: The source file name.
  * @file_to: The destination file name.
+ *
  * Return: 0 on success, -1 on failure.
  */
 int copy_file(const char *file_from, const char *file_to);
@@ -24,6 +27,7 @@ int copy_file(const char *file_from, const char *file_to);
  * main - Entry point of the program.
  * @argc: The number of command-line arguments.
  * @argv: An array of command-line argument strings.
+ *
  * Return: 0 on success, 97 on incorrect number of arguments, 98 on copy error.
  */
 int main(int argc, char *argv[])
@@ -40,19 +44,32 @@ exit(98);
 return (0);
 }
 
+/**
+ * display_error - Displays an error message and exits with the specified code.
+ * @message: The error message to display.
+ * @code: The exit code.
+ *
+ * Return: None.
+ */
 void display_error(const char *message, int code)
 {
 dprintf(STDERR_FILENO, message);
 exit(code);
 }
 
+/**
+ * copy_file - Copies the content of a file to another file.
+ * @file_from: The source file name.
+ * @file_to: The destination file name.
+ *
+ * Return: 0 on success, -1 on failure.
+ */
 int copy_file(const char *file_from, const char *file_to)
 {
 int file_descriptor_from, file_descriptor_to;
 ssize_t bytes_read, bytes_written;
 char buffer[BUFFER_SIZE];
 
-/* Open the source file in read-only mode */
 file_descriptor_from = open(file_from, O_RDONLY);
 if (file_descriptor_from == -1)
 {
@@ -60,7 +77,6 @@ dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
 return (-1);
 }
 
-/* Open or create the destination file in write-only mode */
 file_descriptor_to = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, 0644);
 if (file_descriptor_to == -1)
 {
