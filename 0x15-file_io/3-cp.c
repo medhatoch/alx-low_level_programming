@@ -53,7 +53,7 @@ return (0);
  */
 void display_error(const char *message, int code)
 {
-dprintf(STDERR_FILENO, message);
+fprintf(stderr, "%s", message);
 exit(code);
 }
 
